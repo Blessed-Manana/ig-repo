@@ -16,7 +16,8 @@ function App() {
         <div className="nav2">
           <SideNav/>
         </div>
-        <div>
+        <div className="navSpace"></div>
+        <div className="pages">
           <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/Login" element={<Login/>}></Route>
