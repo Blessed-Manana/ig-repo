@@ -7,7 +7,8 @@
 }
 
 .App{
-  /* display: flex; */
+  display: flex;
+  /* justify-content: end; */
 }
 
 .nav2{
@@ -16,5 +17,14 @@
   max-width: 252px;
   background-color: #000;
   padding: 8px 12px 20px;
-  /* border: 1px solid #c41c1c; */
+  position: fixed;
+}
+
+.navSpace{
+  height: 100vh;
+  min-width: 252px;
+}
+
+.pages{
+  width: 100%;
 }
