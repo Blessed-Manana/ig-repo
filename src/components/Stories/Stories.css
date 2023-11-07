@@ -1,0 +1,36 @@
+
+#mswiper{
+    height: 100%;
+    width: 50%;
+    /* display: flex; */
+    /* justify-content: center; */
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid green;
+}
+
+#slide{
+    /* border: 1px solid green; */
+    /* position: absolute; */
+    /* top: 0; */
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story{
+   /* border: 1px solid green; */
+  height: 100%;
+  /* width: 100%; */
+  text-align: center;
+
+}
+.imag{
+    height: 65px;
+    width: 65px;
+    border-radius: 50px;
+    border: 1px solid #FFFFFF;
+    margin: 10px;
+}
