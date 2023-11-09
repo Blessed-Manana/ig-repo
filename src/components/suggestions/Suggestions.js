@@ -1,9 +1,35 @@
-import { useState } from "react";
-import { Box, Grid, Button, Link, Popover } from "@mui/material";
+import { Box, Grid, Link } from "@mui/material";
 import "../suggestions/Suggestions.css";
 
 const Suggestions = () => {
     let currentlyDay = new Date().getFullYear()
+    let users = [
+      {
+        handel: "anisa.xolisile",
+        isFollewing:"Followed by lost_boy_cruz + 2 more...",
+        image: "userPic2.jpg", 
+      },
+      {
+        handel: "richa.unt",
+        isFollewing:"Followed by txr_djs + 5 more", 
+        image: "userPic3.jpeg",
+      },
+      {
+        handel: "bohlale3",
+        isFollewing:"Followed by puseayanda + 3 more...", 
+        image: "userPic4.jpeg",
+      },
+      {
+        handel: "iss_yuri",
+        isFollewing:"Follows you", 
+        image: "userPic5.jpg",
+      },
+      {
+        handel: "letii4488",
+        isFollewing:"Followed by _your_fav_kink",
+        image: "userPic6.webp", 
+      },
+    ]
 
   return (
     <Box className="suggestions">
@@ -26,20 +52,24 @@ const Suggestions = () => {
         <Link href="/">See All</Link>
       </Grid>
       <Grid className="suggestions2">
-        <Grid className="switchUser">
-          <Grid className="userPic">
-            <Grid className="picBorder">
-              <img src="userPic2.jpg" alt="userimage" />
+        {
+          users.map((ele)=>(
+            <Grid className="switchUser">
+              <Grid className="userPic">
+                <Grid className="picBorder">
+                  <img src={ele.image} alt="userimage" />
+                </Grid>
+              </Grid>
+              <Grid className="sugHandle">
+                <Link href="/Profile">{ele.handel}</Link>
+                <p className="isFollowing">{ele.isFollewing}</p>
+              </Grid>
+              <Grid className="switchbtn">
+                <Link>Follow</Link>
+              </Grid>
             </Grid>
-          </Grid>
-          <Grid className="sugHandle">
-            <Link href="/Profile">letii4488</Link>
-            <p>Follows you</p>
-          </Grid>
-          <Grid className="switchbtn">
-            <Link>Follow</Link>
-          </Grid>
-        </Grid>
+          ))
+        }
       </Grid>
       <Grid className="suggestions3">
         <Grid className="sugLink">
