@@ -24,13 +24,21 @@
 }
 
 .pages{
-  width: 82%;
-  /* border: 5px solid green; */
+  width: 81.3%;
   background-color: #000000;
 }
 
 .home{
-  /* border: 5px solid green; */
   width: 100%;
   background-color: #000;
+  display: flex;
+  padding-top: 40px;
+}
+
+.mainSide{
+  width: 68%;
+}
+
+.sugSide{
+  padding-top: 10px;
 }

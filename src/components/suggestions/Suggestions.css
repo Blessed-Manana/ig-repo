@@ -82,6 +82,8 @@
 .switchbtn a{
     font-size: 13px;
     font-weight: 600;
+    cursor: pointer;
+    color: rgb(34, 112, 160)
 }
 
 .seeAll{
@@ -110,9 +112,9 @@
 }
 
 .sugLink a{
-    color: #ffffffda;
+    color: #ffffff91;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 12.3px;
     margin: 2px;
     cursor: pointer;
 }
@@ -124,7 +126,7 @@
 .sugDate p{
     margin-top: 10px;
     font-size: 14px;
-    color: #ffffffda;
+    color: #ffffff91;
     font-weight: 300;
     text-transform: uppercase;
 }

@@ -1,8 +1,6 @@
 .feedHolder {
-  width: 42%;
+  width: 60%;
   margin: 60px auto;
-  /* border: 5px solid blue; */
-  /* background-color: #000000; */
   color: #ffffff;
   text-align: center;
 }
