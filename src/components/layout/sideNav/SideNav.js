@@ -16,23 +16,31 @@ import {
   BookmarkBorder,
 } from "@mui/icons-material";
 
+//drawer
 
-import { LuActivitySquare } from 'react-icons/lu';
-import { BiSolidMoviePlay } from 'react-icons/bi';
-import { SiThreads } from 'react-icons/si';
-import { GoMoon } from 'react-icons/go';
-import { TbMessageReport } from 'react-icons/tb';
-import {  } from 'react-icons/bi';
-import {  } from 'react-icons/bi';
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+// import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
-
+import { LuActivitySquare } from "react-icons/lu";
+import { BiSolidMoviePlay } from "react-icons/bi";
+import { SiThreads } from "react-icons/si";
+import { GoMoon } from "react-icons/go";
+import { TbMessageReport } from "react-icons/tb";
+import {} from "react-icons/bi";
+import {} from "react-icons/bi";
 
 const SideNav = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const id = "menu-popover";
 
-
-const handleClick = (event) => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -40,7 +48,67 @@ const handleClick = (event) => {
     setAnchorEl(null);
   };
 
+  const [state, setState] = React.useState({
+    left: false,
+  });
 
+  const [isSearchDrawerOpen, setIsSearchDrawerOpen] = useState(false);
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor, isOpen) => (
+    <Drawer
+      // sx={{ border: "2px solid green !important" }}
+      anchor={anchor}
+      open={isOpen}
+      onClose={() => setIsSearchDrawerOpen(false)}
+      BackdropProps={{
+        onClick: () => setIsSearchDrawerOpen(false),
+      }}
+      PaperProps={{
+        className: "custom-drawer", // Apply custom class for styling
+        style: {
+          marginLeft: "180px", // Set the left margin
+          position: "absolute", // Set position to absolute
+          backgroundColor: "black",
+          color: "white",
+          borderRight: "1px solid grey",
+          width: "400px",
+          borderRadius: "10px"
+        },
+      }}
+    >
+      <Box
+        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        // sx={{border:"2px solid green"}}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <List>
+          {["Inbox", "Starred", "Send email"].map((text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    </Drawer>
+  );
 
   return (
     <Box className="nav">
@@ -74,8 +142,11 @@ const handleClick = (event) => {
           </Button>
         </Link>
       </Grid>
-      <Grid className="btnContainer">
-        <Button className="navBtn">
+      <Grid
+        className="
+      "
+      >
+        <Button onClick={() => setIsSearchDrawerOpen(true)}>
           <Search className="navIcon" />
           Search
         </Button>
@@ -141,7 +212,7 @@ const handleClick = (event) => {
             vertical: "top",
             horizontal: "left",
           }}
-          transformOrigin={{ 
+          transformOrigin={{
             vertical: "top",
             horizontal: "left",
           }}
@@ -204,6 +275,10 @@ const handleClick = (event) => {
           </Grid>
         </Popover>
       </Grid>
+
+      <Box sx={{ border: "5px solid red !important" }}>
+        {isSearchDrawerOpen && list("left", isSearchDrawerOpen)}
+      </Box>
     </Box>
   );
 };

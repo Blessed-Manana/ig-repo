@@ -2,8 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .App{
@@ -26,5 +25,14 @@
 }
 
 .pages{
+  width: 82%;
+  /* border: 5px solid green; */
+  background-color: #000000;
+}
+
+.home{
+  /* border: 5px solid green; */
   width: 100%;
+  height: 100%;
+  
 }

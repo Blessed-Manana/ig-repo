@@ -1,0 +1,35 @@
+#mswiper {
+  /* height: 30%; */
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#slide {
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story {
+  /* border: 1px solid green; */
+  height: 100%;
+  /* width: 100%; */
+  text-align: center;
+}
+.imag {
+  height: 65px;
+  width: 65px;
+  border-radius: 50px;
+  border: 1px solid #ffffff;
+  margin: 10px;
+}
+
+#next {
+  color: red;
+}
