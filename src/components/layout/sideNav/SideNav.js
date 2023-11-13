@@ -64,6 +64,10 @@ const SideNav = () => {
 
   const [isSearchDrawerOpen, setIsSearchDrawerOpen] = useState(false);
 
+  const handleDrawer = () => {
+    setIsSearchDrawerOpen(!isSearchDrawerOpen)
+  }
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -75,15 +79,14 @@ const SideNav = () => {
     setState({ ...state, [anchor]: open });
   };
 
+  
+
   const list = (anchor, isOpen) => (
     <Drawer
       // sx={{ border: "2px solid green !important" }}
       anchor={anchor}
       open={isOpen}
-      onClose={() => setIsSearchDrawerOpen(false)}
-      BackdropProps={{
-        onClick: () => setIsSearchDrawerOpen(false),
-      }}
+     onClick={handleDrawer}
       PaperProps={{
         className: "custom-drawer", // Apply custom class for styling
         style: {
@@ -92,7 +95,7 @@ const SideNav = () => {
           backgroundColor: "black",
           color: "white",
           borderRight: "1px solid grey",
-          width: "400px",
+          width: "300px",
           borderRadius: "10px"
         },
       }}
@@ -104,7 +107,7 @@ const SideNav = () => {
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
       >
-        <List>
+        {/* <List>
           {["Inbox", "Starred", "Send email"].map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
@@ -115,7 +118,13 @@ const SideNav = () => {
               </ListItemButton>
             </ListItem>
           ))}
-        </List>
+        </List> */}
+        <div className="searchText">
+        <p>Search</p>
+        </div>
+        <div className="seacrchContainer">
+        <input type="search"/>
+        </div>
       </Box>
     </Drawer>
   );
@@ -148,7 +157,8 @@ const SideNav = () => {
         <Link href="/" to="/Home">
           <Button className="navBtn">
             <Home className="navIcon" />
-            Home
+            {isSearchDrawerOpen ? "" : "Home"}
+            
           </Button>
         </Link>
       </Grid>
@@ -156,16 +166,17 @@ const SideNav = () => {
         className="
       "
       >
-        <Button onClick={() => setIsSearchDrawerOpen(true)}>
+        <Button onClick={() => setIsSearchDrawerOpen(true)} id = "searchBUT">
           <Search className="navIcon" />
-          Search
+          {isSearchDrawerOpen ? "" : "Search"}
         </Button>
       </Grid>
       <Grid className="btnContainer">
         <Link href="/Explore">
           <Button className="navBtn">
             <Explore className="navIcon" />
-            Explore
+            {isSearchDrawerOpen ? "" : "Explore"}
+            
           </Button>
         </Link>
       </Grid>
@@ -173,7 +184,8 @@ const SideNav = () => {
         <Link href="/Reel">
           <Button className="navBtn">
             <BiSolidMoviePlay className="navIcon reels" />
-            Reels
+            {isSearchDrawerOpen ? "" : "Reels"}
+            
           </Button>
         </Link>
       </Grid>
@@ -181,20 +193,23 @@ const SideNav = () => {
         <Link href="/Messages">
           <Button className="navBtn">
             <SendOutlined className="navIcon mssg" />
-            Messages
+            {isSearchDrawerOpen ? "" : "Messages"}
+            
           </Button>
         </Link>
       </Grid>
       <Grid className="btnContainer">
         <Button className="navBtn">
           <FavoriteBorderOutlined className="navIcon" />
-          Notifications
+          {isSearchDrawerOpen ? "" : "Notifications"}
+          
         </Button>
       </Grid>
       <Grid className="btnContainer Create">
         <Button className="navBtn" aria-describedby={id} onClick={handleClick2}>
           <AddBoxOutlined className="navIcon" />
-          Create
+          {isSearchDrawerOpen ? "" : "Create"}
+    
         </Button>
         <Popover
           className="popover2"
@@ -249,14 +264,16 @@ const SideNav = () => {
         <Link href="/Profile">
           <Button className="navBtn">
             <PersonRounded className="navIcon" />
-            Profile
+            {isSearchDrawerOpen ? "" : "Profile"}
+            
           </Button>
         </Link>
       </Grid>
       <Grid className="btnContainer morebtn">
         <Button className="navBtn" aria-describedby={id} onClick={handleClick}>
           <Menu className="navIcon" />
-          More
+          {isSearchDrawerOpen ? "" : "More"}
+          
         </Button>
         <Popover
           className="popover"

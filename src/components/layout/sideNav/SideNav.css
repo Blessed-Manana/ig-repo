@@ -1,189 +1,213 @@
-.nav  {
-    color: white;
-    text-decoration: none;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: all 0.5s !important;
-    /* border: 2px solid #fff; */
+.nav {
+  color: white;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: all 0.5s !important;
+  /* border: 2px solid #fff; */
 }
 
 .svg {
-    margin-bottom: 19px;
-    padding: 25px 12px 16px;
+  margin-bottom: 19px;
+  padding: 25px 12px 16px;
 }
 
 .btnContainer {
-    width: 100%; 
-    height: 48px;
-    margin: 7px 0px;
+  width: 100%;
+  height: 48px;
+  margin: 7px 0px;
 }
 
 .navBtn {
-    font-size: 16px !important;
-    font-weight: 400;
-    text-transform: none !important;
-    padding: 12px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center !important;
-    justify-content: start !important;
-    border-radius: 10px;
-    color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 400;
+  text-transform: none !important;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center !important;
+  justify-content: start !important;
+  border-radius: 10px;
+  color: #ffffff !important;
 }
 
 .navBtn:hover {
-    background-color: #b1b0b11c !important;
+  background-color: #b1b0b11c !important;
 }
 
 .navBtn:hover .navIcon {
-    width: 26px !important;
-    height: 26px !important;
+  width: 26px !important;
+  height: 26px !important;
 }
 
 .navIcon {
-    margin-right: 10px;
-    width: 24px !important;
-    height: 24px !important;
+  margin-right: 10px;
+  width: 24px !important;
+  height: 24px !important;
 }
 
-
 .popover button {
-    width: 100% !important;
-    padding: 12px;
-    background-color: #272727 !important;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: #fff;
-    text-transform: none;
-    border-radius: 10px;
+  width: 100% !important;
+  padding: 12px;
+  background-color: #272727 !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  text-transform: none;
+  border-radius: 10px;
 }
 
 .popover button:hover {
-    background-color: #414141a9 !important;
+  background-color: #414141a9 !important;
 }
 
 .morebtn {
-    padding-top: 20px;
-    margin-top: 20px;
-    height: 85px !important;
+  padding-top: 20px;
+  margin-top: 20px;
+  height: 85px !important;
 }
 
 .morebtn button {
-    height: 49px;
+  height: 49px;
 }
 
 .treadsBox {
-    border-top: 5px solid #494949;
-    border-bottom: 5px solid #494949;
-    padding: 8px 8px;
-    margin: 10px 0px;
+  border-top: 5px solid #494949;
+  border-bottom: 5px solid #494949;
+  padding: 8px 8px;
+  margin: 10px 0px;
 }
 
 .switchBox {
-    padding: 8px 8px;
-    border-bottom: 1px solid #494949;
+  padding: 8px 8px;
+  border-bottom: 1px solid #494949;
 }
 
-.btnBox{
-    padding: 0px 8px;
+.btnBox {
+  padding: 0px 8px;
 }
 
-.btnBox2{
-    padding: 8px 8px;
+.btnBox2 {
+  padding: 8px 8px;
 }
 
 .reels {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .mssg {
-    transform: rotate(-50deg);
+  transform: rotate(-50deg);
 }
 
 /* Create btn */
 
-.Create *{
-    transition: all 0.5s;
+.Create * {
+  transition: all 0.5s;
 }
 
-.addPost{
-    width: 80%;
-    height: 70%;
+.addPost {
+  width: 80%;
+  height: 70%;
 }
 
-.addPosth1{
+.addPosth1 {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #c2c2c29f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 19px;
+  text-align: center;
+  color: #fff;
+}
+
+.popover2 {
+  background-color: #0000007a;
+}
+
+.addPostContainer {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addPostIcon {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 8px;
+}
+
+.addPostIcon input {
+  display: none;
+}
+
+.addPostIcon label svg {
+  color: #fff;
+}
+
+.addPostContainer p {
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.addPostBtn {
+  width: 100%;
+  height: 40%;
+  padding: 16px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.addPostBtn button,
+.addPostBtn label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: lowercase;
+  width: 176px;
+  background-color: #0095f6;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.addPostBtn button:hover {
+  background-color: #0094f6d7;
+}
+
+.searchText {
+  width: 100px;
+  height: 50px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.seacrchContainer{
     width: 100%;
-    height: 40px;
-    border-bottom: 1px solid #c2c2c29f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 50px;
 }
-
-
-h1{
-    font-size: 19px;
-    text-align: center;
-    color: #fff;
-}
-
-
-.popover2{
-    background-color: #0000007a;
-}
-
-.addPostContainer{
+.seacrchContainer input{
     width: 100%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.addPostIcon{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    padding: 8px;
-}
-
-.addPostIcon input{
-    display: none;
-}
-
-.addPostIcon label svg{
-    color: #fff;
-}
-
-.addPostContainer p{
-    font-size: 18px;
-    text-align: center;
-    color: #fff;
-}
-
-.addPostBtn{
-    width: 100%;
-    height: 40%;
-    padding: 16px;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-}
-
-.addPostBtn button, .addPostBtn label{
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: lowercase;
-    width: 176px;
-    background-color: #0095f6;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.addPostBtn button:hover{
-    background-color: #0094f6d7;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(67, 64, 64);
+    height: 30px;
 }
