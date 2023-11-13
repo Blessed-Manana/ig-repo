@@ -6,9 +6,13 @@ import Feeds from "../components/feeds/feeds";
 const Home = () => {
     return ( 
         <div className="home">
-            <Suggestions/>
-            <Stories/>
-            <Feeds/>
+            <div className="mainSide">
+                <Stories/>
+                <Feeds/>
+            </div>
+            <div className="sugSide">
+                <Suggestions/>
+            </div>
         </div>
      );
 }
