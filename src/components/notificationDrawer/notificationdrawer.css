@@ -1,0 +1,262 @@
+/* styles.css */
+
+.MuiPaper-root.MuiDrawer-paper {
+  /* border: 1px solid white; */
+  height: 100%;
+  margin-left: 50px;
+  width: 397px;
+  background-color: black;
+  color: white;
+}
+
+.MuiPaper-elevation16 {
+  /* border: 3px solid blue; */
+  color: white;
+}
+.drawer{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+#Notifications{
+    font-weight: 400;
+}
+
+.mainContainer{
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.notificationSpanContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 24px 24px;
+}
+.notificationSpanContainer span{
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.todayContainer{
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.todayContainer span{
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Feeds1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+
+.feed1{
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    cursor: pointer;
+}
+.feed1:hover{
+    background-color: rgb(36, 35, 35);
+}
+.feed2:hover{
+    background-color: rgb(36, 35, 35);
+}
+.feed3:hover{
+    background-color: rgb(36, 35, 35);
+}
+.imgContainer0{
+    width: 100%;
+}
+.imgContainer1{
+    width: 50px;
+    height: 50px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient( 45deg, #ff0000, #00ff00, #0000ff);
+    border-image-slice: 1;
+    border-radius: 50px;
+}
+
+.UserName1whoYouMightKnowdays{
+    
+    margin-left: 14px;
+}
+.UserName1whoYouMightKnowdays p{
+    font-size: 14px;
+    width: 170px;
+    line-height: 18px;
+}
+#UserName1{
+    font-weight: bold;
+}
+#days{
+    color: grey;
+}
+.followBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 32px;
+}
+
+.followBtn button{
+    width: 82px;
+    height: 32px;
+    background-color: #0095F6;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    padding: 7px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.followBtn button:hover{
+    background-color: #0470b9;
+}
+.followBtn2 button:hover{
+    background-color: #0470b9;
+}
+.followBtn3 button:hover{
+    background-color: #0470b9;
+}
+
+hr{
+    margin: 14px 0;
+    color: #262626;
+}
+
+
+
+/* Feeds2 */
+.Feeds2{
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.feed2{
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    cursor: pointer;
+}
+.imgContainer2{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+
+.UserName1whoYouMightKnowdays2{
+    
+    margin-left: 14px;
+}
+.UserName1whoYouMightKnowdays2 p{
+    font-size: 14px;
+    width: 170px;
+    line-height: 18px;
+}
+#UserName2{
+    font-weight: bold;
+}
+#days2{
+    color: grey;
+}
+.followBtn2{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 32px;
+}
+
+.followBtn2 button{
+    width: 82px;
+    height: 32px;
+    background-color: #0095F6;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    padding: 7px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* feed3 */
+
+.Feeds3{
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.feed3{
+    width: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    cursor: pointer;
+}
+.imgContainer3{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+
+.UserName1whoYouMightKnowdays3{
+    
+    margin-left: 14px;
+}
+.UserName1whoYouMightKnowdays3 p{
+    font-size: 14px;
+    width: 170px;
+    line-height: 18px;
+}
+#UserName3{
+    font-weight: bold;
+}
+#days3{
+    color: grey;
+}
+.followBtn3{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 32px;
+}
+
+.followBtn3 button{
+    width: 82px;
+    height: 32px;
+    background-color: #0095F6;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    padding: 7px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}

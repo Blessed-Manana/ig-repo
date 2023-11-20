@@ -55,7 +55,6 @@ const Feeds = () => {
   return (
     <div className="feedHolder">
       {feeds.map((feed, index) => {
-        console.log(feed);
         return (
           <div key={index} className="feed">
             <div className="topFeeds">
