@@ -1,7 +1,9 @@
+import ExploreContent from "../components/explore/Explore";
+
 const Explore = () => {
     return ( 
         <div className="explore">
-            <h1>Explore</h1>
+            <ExploreContent/>
         </div>
      );
 }

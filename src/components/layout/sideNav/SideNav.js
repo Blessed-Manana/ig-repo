@@ -33,8 +33,6 @@ import { BiSolidMoviePlay } from "react-icons/bi";
 import { SiThreads } from "react-icons/si";
 import { GoMoon } from "react-icons/go";
 import { TbMessageReport } from "react-icons/tb";
-import {} from "react-icons/bi";
-import {} from "react-icons/bi";
 
 const SideNav = () => {
   const [anchorEl, setAnchorEl] = useState(null);
