@@ -1,0 +1,135 @@
+.messageRequests{
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #ffffff48;
+}
+
+.existHeading{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+}
+
+.existHeading h1{
+    font-size: 24px;
+    color: #f5f5f5;
+}
+
+.existHeadingIcon{
+    color: #fff;
+    font-weight: 700;
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.infoLink{
+    width: 100%;
+    height: 75px;
+    padding: 14px 24px;
+    text-align: center;
+}
+
+.infoLink p{
+    font-size: 12px;
+    color: #f5f5f56b;
+}
+
+.infoLink a{
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.selectUser{
+    width: 100%;
+    height: 62px;
+    padding: 4px 0px 0px 5px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
+    transition: all 0.5s;
+}
+
+.selectUser:hover{
+    background-color: #cccccc2d;
+    cursor: pointer;
+}
+
+.selectuserPic{
+    width: 58px;
+    height: 100%;
+}
+
+.selectpicBorder{
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    padding: 1px;
+    border: none;
+}
+
+.selectpicBorder img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.selectHandle,.selectHandle2{
+    height: 100%;
+    width: 60%;
+    padding: 8px;
+}
+
+.selectHandle2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectHandle a{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+}
+
+.selectHandle p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccccccc4;
+}
+
+.requetedMsgBox{
+    width: 100%;
+    height: 395px;
+    overflow-y: scroll;
+}
+
+.selectHandle2Icon{
+    width: 16px;
+    height: 16px;
+    color: #f5f5f5;
+}
+
+.requetedMsgButton{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.requetedMsgButton button{
+    background-color: transparent;
+    color: #ed4956;
+    font-size: 16px;
+    text-transform: none;
+}

@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { Box, Grid, Button, Link, Popover } from "@mui/material";
+import { Box, Grid, Button, Popover, Link } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 import "../sideNav/SideNav.css";
 import {
   Home,
@@ -19,15 +20,6 @@ import {
 //drawer
 
 import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-// import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import CancelIcon from "@mui/icons-material/Cancel";
 import ClearIcon from "@mui/icons-material/Clear";
 
 import { LuActivitySquare } from "react-icons/lu";
@@ -35,19 +27,33 @@ import { BiSolidMoviePlay } from "react-icons/bi";
 import { SiThreads } from "react-icons/si";
 import { GoMoon } from "react-icons/go";
 import { TbMessageReport } from "react-icons/tb";
+import { FaInstagram } from "react-icons/fa6";
 
 // Recents Pop Over
-// import * as React from 'react';
-// import Popover from '@mui/material/Popover';
-import Typography from "@mui/material/Typography";
 import NotificationDrawer from "../../notificationDrawer/notificationDrawer";
-// import Button from '@mui/material/Button';
 
-const SideNav = () => {
+const SideNav = ({ onMessageClick }) => {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorEl2, setAnchorEl2] = useState(null);
+  const [isMessagesClicked, setIsMessagesClicked] = useState(false);
   const id = "menu-popover";
   const id2 = "menu-popover2";
+
+  const handleRefreshClick = (event) => {
+  // Prevent the default behavior
+  event.preventDefault();
+
+  // Your custom logic
+  // For example, navigate programmatically using history.push
+  navigate('/Messages');
+};
+
+  const handleMessagesClick = () => {
+    setIsMessagesClicked(!isMessagesClicked);
+  };
+
+  const shrinkNavClass = isMessagesClicked ? "shrink-nav" : "";
 
   const reecents = [
     {
@@ -60,11 +66,6 @@ const SideNav = () => {
       spanAccountName: "johnnyoka5",
       spanUserName: "John Nyoka",
     },
-     {
-      recentImg: "image",
-      spanAccountName: "johnnyoka5",
-      spanUserName: "John Nyoka",
-    },
     {
       recentImg: "image",
       spanAccountName: "johnnyoka5",
@@ -75,7 +76,11 @@ const SideNav = () => {
       spanAccountName: "johnnyoka5",
       spanUserName: "John Nyoka",
     },
-    
+    {
+      recentImg: "image",
+      spanAccountName: "johnnyoka5",
+      spanUserName: "John Nyoka",
+    },
   ];
 
   // recents
@@ -108,38 +113,10 @@ const SideNav = () => {
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
-  const [state, setState] = React.useState({
-    left: false,
-  });
 
   const [isSearchDrawerOpen, setIsSearchDrawerOpen] = useState(false);
 
-  const handleDrawer = () => {
-    setIsSearchDrawerOpen(!isSearchDrawerOpen);
-  };
-
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    
-
-    setState({ ...state, [anchor]: open });
-  };
-
-
-  // notification drawer
-  const [isOpen, setIsOpen] = useState(true); 
-  const handleCloseDrawer = () => {
-    setIsOpen(false); // Close the drawer
-  };
- 
-
   const list = (anchor, isOpen) => (
-    
     <Drawer
       anchor={anchor}
       open={isOpen}
@@ -156,7 +133,6 @@ const SideNav = () => {
           borderRadius: "10px",
         },
       }}
-      
     >
       <Box
         sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -178,12 +154,7 @@ const SideNav = () => {
         <div className="recentsClearAll">
           <div id="recent">Recent</div>
           <div className="clearAllBtnHolder">
-            <Button
-              // aria-describedby={id0}
-              // variant="contained"
-              onClick={handleClick0}
-              id="clearAllBtn"
-            >
+            <Button onClick={handleClick0} id="clearAllBtn">
               Clear All
             </Button>
             <Popover
@@ -201,7 +172,6 @@ const SideNav = () => {
                 vertical: "top",
                 horizontal: "left",
               }}
-              i
               slotProps={{
                 paper: {
                   sx: {
@@ -255,18 +225,18 @@ const SideNav = () => {
   );
 
   return (
-    <Box className="nav">
-
-   {/* notification drawer */}
-
-   
-
-
-      <Grid className="svg">
+    <Box className={`nav ${shrinkNavClass}`}>
+      <Grid className={`svg ${isMessagesClicked ? "icon-only" : ""}`}>
+        <FaInstagram
+          className="navIcon"
+          style={isMessagesClicked ? { display: "block" } : { display: "none" }}
+        />
         {isSearchDrawerOpen ? (
           ""
         ) : (
-          <Link href="/">
+          <Link href="/"
+          style={isMessagesClicked ? { display: "none" } : { display: "block" }}
+          >
             <svg
               aria-label="Instagram"
               className="x1lliihq x1n2onr6"
@@ -290,56 +260,63 @@ const SideNav = () => {
       </Grid>
       <Grid className="btnContainer">
         <Link href="/" to="/Home">
-          <Button className="navBtn">
+          <Button className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}>
             <Home className="navIcon" />
-            {isSearchDrawerOpen ? "" : "Home"}
+            <span>{isSearchDrawerOpen ? "" : "Home"}</span>
           </Button>
         </Link>
       </Grid>
-      <Grid
-        className="
-      "
-      >
-        <Button onClick={() => setIsSearchDrawerOpen(true)} id="searchBUT">
+      <Grid className="btnContainer">
+        <Button
+          className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}
+          onClick={() => setIsSearchDrawerOpen(true)}
+          id="searchBUT"
+        >
           <Search className="navIcon" />
-          {isSearchDrawerOpen ? "" : "Search"}
+          <span>{isSearchDrawerOpen ? "" : "Search"}</span>
         </Button>
       </Grid>
       <Grid className="btnContainer">
         <Link href="/Explore">
-          <Button className="navBtn">
+          <Button className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}>
             <Explore className="navIcon" />
-            {isSearchDrawerOpen ? "" : "Explore"}
+            <span>{isSearchDrawerOpen ? "" : "Explore"}</span>
           </Button>
         </Link>
       </Grid>
       <Grid className="btnContainer">
         <Link href="/Reel">
-          <Button className="navBtn">
+          <Button className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}>
             <BiSolidMoviePlay className="navIcon reels" />
-            {isSearchDrawerOpen ? "" : "Reels"}
+            <span>{isSearchDrawerOpen ? "" : "Reels"}</span>
           </Button>
         </Link>
       </Grid>
       <Grid className="btnContainer">
-        <Link href="/Messages">
-          <Button className="navBtn">
+        <Link href="/Messages" onClick={onMessageClick} >
+          <Button
+            className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}
+            onClick={handleMessagesClick}
+          >
             <SendOutlined className="navIcon mssg" />
-            {isSearchDrawerOpen ? "" : "Messages"}
+            <span>{isSearchDrawerOpen ? "" : "Messages"}</span>
           </Button>
         </Link>
       </Grid>
       <Grid className="btnContainer">
-        <Button className="navBtn">
+        <Button className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}>
           <FavoriteBorderOutlined className="navIcon" />
-          {/* {isSearchDrawerOpen ? "" : "Notifications"} */}
-          <NotificationDrawer/>
+          <NotificationDrawer handleMessagesClick={isMessagesClicked} isSearchDrawerOpen/>
         </Button>
       </Grid>
       <Grid className="btnContainer Create">
-        <Button className="navBtn" aria-describedby={id} onClick={handleClick2}>
+        <Button
+          className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}
+          aria-describedby={id}
+          onClick={handleClick2}
+        >
           <AddBoxOutlined className="navIcon" />
-          {isSearchDrawerOpen ? "" : "Create"}
+          <span>{isSearchDrawerOpen ? "" : "Create"}</span>
         </Button>
         <Popover
           className="popover2"
@@ -348,7 +325,7 @@ const SideNav = () => {
           anchorEl={anchorEl2}
           onClose={handleClose2}
           anchorReference="anchorPosition"
-          anchorPosition={{ top: 95, left: 430 }}
+          anchorPosition={{ top: 95, left: 570 }}
           anchorOrigin={{
             vertical: "bottom",
             horizontal: "left",
@@ -416,16 +393,20 @@ const SideNav = () => {
       </Grid>
       <Grid className="btnContainer">
         <Link href="/Profile">
-          <Button className="navBtn">
+          <Button className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}>
             <PersonRounded className="navIcon" />
-            {isSearchDrawerOpen ? "" : "Profile"}
+            <span>{isSearchDrawerOpen ? "" : "Profile"}</span>
           </Button>
         </Link>
       </Grid>
       <Grid className="btnContainer morebtn">
-        <Button className="navBtn" aria-describedby={id} onClick={handleClick}>
+        <Button
+          className={`navBtn ${isMessagesClicked ? "icon-only" : ""}`}
+          aria-describedby={id}
+          onClick={handleClick}
+        >
           <Menu className="navIcon" />
-          {isSearchDrawerOpen ? "" : "More"}
+          <span>{isSearchDrawerOpen ? "" : "More"}</span>
         </Button>
         <Popover
           className="popover"
@@ -449,7 +430,6 @@ const SideNav = () => {
                 background: "#262626",
                 width: "260px",
                 margin: "-65px 0px 0px 20px",
-                // height: "451px",
                 borderRadius: "15px",
                 padding: "8px 0px",
               },
@@ -502,7 +482,6 @@ const SideNav = () => {
           </Grid>
         </Popover>
       </Grid>
-
       <Box sx={{ border: "5px solid red !important" }}>
         {isSearchDrawerOpen && list("left", isSearchDrawerOpen)}
       </Box>

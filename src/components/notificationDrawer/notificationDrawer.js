@@ -2,18 +2,19 @@ import "./notificationdrawer.css";
 
 import React, { useState } from "react";
 import Drawer from "@mui/material/Drawer";
-// import Button from "@mui/material/Button";
-// import List from "@mui/material/List";
-// import ListItem from "@mui/material/ListItem";
-// import ListItemText from "@mui/material/ListItemText";
 
-const NotificationDrawer = () => {
+
+const NotificationDrawer = ({isMessagesClicked, isSearchDrawerOpen}) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  // const [isNotificationsClicked, setIsNotificationsClicked] = useState(false);
+
   const openDrawer = () => {
-    setIsDrawerOpen(true);
+    setIsDrawerOpen(true)
+    // setIsNotificationsClicked(true);
   };
   const closeDrawer = () => {
     setIsDrawerOpen(false);
+    // setIsNotificationsClicked(false);
   };
 
   const Feeds1 = [
@@ -74,12 +75,14 @@ const NotificationDrawer = () => {
   ];
 
   return (
-    <div className="notificationDrawerContainer">
-      <p onClick={openDrawer} id="Notifications">Notifications</p>
+    <div className={`notificationDrawerContainer ${isMessagesClicked ? "icon-only" : ""}`}>
+      <p onClick={openDrawer} id="Notifications">
+        {!isSearchDrawerOpen ? "" : "Notifications"}
+      </p>
       <Drawer open={isDrawerOpen} onClose={closeDrawer} id="drawer">
         <div className="mainContainer">
           <div className="notificationSpanContainer">
-            <span>Notifications</span>
+            {/* <span>Notifications</span> */}
           </div>
           <div className="todayContainer">
             <span>Today</span>

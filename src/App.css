@@ -24,7 +24,7 @@
 }
 
 .pages{
-  width: 81.3%;
+  width: 81.7%;
   background-color: #000000;
 }
 
@@ -37,8 +37,44 @@
 
 .mainSide{
   width: 68%;
+
 }
 
 .sugSide{
   padding-top: 10px;
+}
+
+body *::-webkit-scrollbar {
+  width: 12px !important;               
+}
+
+body *::-webkit-scrollbar-track {
+  background: #ffffff !important;       
+}
+
+body *::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;    
+  border-radius: 20px;       
+  border: 3px solid #b1b1b1b0;  
+}
+
+.messages{
+  display: flex;
+  height: 99.5vh;
+  overflow: hidden;
+}
+
+.messages2{
+  width: 100%;
+  display: flex;
+}
+
+.userSelection{
+  width: 30%;
+  height: 100vh;
+}
+
+.chatroom{
+  width: 70%;
+  height: 100%;
 }

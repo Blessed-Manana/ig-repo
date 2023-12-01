@@ -1,0 +1,164 @@
+*{
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.userSelectionContent{
+    width: 100%;
+    padding: 34px 0px 0px;
+    border-right: 1px solid #cccccc7c;
+}
+
+.switchHandle{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+}
+
+.handle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.handle h1{
+    color: #f5f5f5;
+    font-size: 20px;
+}
+
+.searchUser{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.searchUserIcon{
+    width: 29px;
+    height: 29px;
+}
+
+.tabs{
+    display: flex;
+}
+
+.primaryGeneral{
+    width: 66%;
+}
+
+.requests{
+    width: 44%;
+}
+
+/* .primaryGeneral, .requests{
+    border: 1px solid #fffb00;
+} */
+
+.users{
+    width: 100%;
+    height: 82vh !important;
+    border-top: 1px solid #cccccc7c;
+    padding: 0 !important;
+    overflow-y: scroll;
+}
+
+/* .users *{
+    border: 1px solid #fff;
+} */
+
+/* #simple-tabpanel-1{
+    display: none !important;
+} */
+
+.css-19kzrtu{
+    padding: 8px 0px !important;
+}
+
+.users2{
+    height: 81vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+}
+
+.selectUser{
+    width: 100%;
+    height: 62px;
+    padding: 4px 0px 0px 5px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
+    transition: all 0.5s;
+}
+
+.selectUser:hover{
+    background-color: #cccccc2d;
+    cursor: pointer;
+}
+
+.selectuserPic{
+    width: 58px;
+    height: 100%;
+}
+
+.selectpicBorder{
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    padding: 1px;
+    border: none;
+}
+
+.selectpicBorder img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.selectHandle{
+    height: 100%;
+    width: 60%;
+    padding: 8px;
+}
+
+.selectHandle a{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+}
+
+.selectHandle p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccccccc4;
+}
+
+
+.Mui-selected{
+    color: #fff !important;
+}
+
+.requests{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.requests a{
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.MuiTabs-indicator{
+    background-color: #fff !important;
+    color: #fff !important;
+}

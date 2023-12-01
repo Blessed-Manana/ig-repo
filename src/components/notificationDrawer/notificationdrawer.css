@@ -260,3 +260,12 @@ hr{
     cursor: pointer;
     font-size: 14px;
 }
+
+
+.notificationDrawerContainer {
+    transition: all 0.3s ease;
+  }
+  
+  .notificationDrawerContainer.icon-only p {
+    display: none;
+  }
