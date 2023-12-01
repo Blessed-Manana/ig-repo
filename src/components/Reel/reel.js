@@ -8,11 +8,28 @@ import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 
 const Reels = () => {
-  const reels = [{}, {}, {}];
+  const reels = [
+    {
+      likes: "613k",
+      chats: "3310",
+    },
+    {
+      likes: "61k",
+      chats: "30",
+    },
+    {
+      likes: "97",
+      chats: "599",
+    },
+    {
+      likes: "100",
+      chats: "12",
+    },
+  ];
 
   return (
     <div className="reelHolder">
-      {reels.map((index, reel) => {
+      {reels.map((reel, index) => {
         return (
           <div key={index} className="reel">
             <div className="soundIconVideoContainer">
@@ -35,14 +52,14 @@ const Reels = () => {
                     <FavoriteBorderIcon />
                   </a>
                   <br />
-                  <span>613k</span>
+                  <span>{reel.likes}</span>
                 </div>
                 <div className="ModeCommentOutlinedIcon">
                   <a href="/" title="Comment">
                     <ModeCommentOutlinedIcon />
                   </a>
                   <br />
-                  <span>3310</span>
+                  <span>{reel.chats}</span>
                 </div>
                 <div className="SendOutlinedIcon">
                   <a href="/" title="Direct">

@@ -1,0 +1,14 @@
+
+
+#shareYourFirstPost{
+    color: #0095F6;
+    background-color: black;
+    border: none;
+    font-weight: bold;
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+#shareYourFirstPost:hover{
+    color: white;
+}

@@ -1,9 +1,12 @@
+import ProfileInfo from "../components/ProfileUserInfo/profileInfo";
+
 const Profile = () => {
-    return ( 
-        <div className="profile">
-            <h1>Profile</h1>
-        </div>
-     );
-}
- 
+  return (
+    <div className="profile">
+      
+      <ProfileInfo/>
+    </div>
+  );
+};
+
 export default Profile;

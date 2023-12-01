@@ -1,0 +1,97 @@
+
+.profileInfoContainer{
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    padding: 0 80px;
+}
+
+.profePictureEditProfileVeiwArciveCotainer{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    margin: 30px 0;
+    display: flex;
+    
+}
+
+.profilepictureUploaderContainer{
+    width: 291px;
+    height: 150px;
+    /* border: 1px solid white; */
+}
+.profilePicture{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.profilePicture img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.EditProfileVeiwArciveContainer{
+    /* border: 1px solid yellow; */
+    margin-left: 30px;
+}
+.editVeiw{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+   
+}
+.editVeiw h2{
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.editVeiw a{
+    background: #363636;
+    font-size: 14px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    height: 32px;
+    margin: 0 5px;
+}
+
+#optionsIconContainer{
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.postsafolowersFollowing{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.postsafolowersFollowing p{
+    margin-right: 40px;
+    font-size: 16px;
+}
+#followers{
+    cursor: pointer;
+}
+#following{
+    cursor: pointer;
+}
+.postsafolowersFollowing p span{
+    font-weight: bold;
+}
+
+.profileUserName{
+    font-weight: bold;
+}

@@ -29,3 +29,39 @@
 #next {
   color: red;
 }
+
+.swiper-button-prev {
+  color: grey;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-prev::after{
+  transform: scale(0.4);
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-next {
+  color: grey;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-next::after{
+  transform: scale(0.4);
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
