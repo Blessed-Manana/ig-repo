@@ -1,0 +1,44 @@
+
+.ProfileInfoFooterContainer{
+    width: 100%;
+    margin: 60px 0;
+}
+
+.footerTopSpansContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerTopSpansContainer a{
+    /* border: 1px solid white; */
+    text-decoration: none;
+    color: #A8A8A8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0 8px;
+}
+.footerTopSpansContainer a:hover{
+    border-bottom: 1px solid white;
+}
+
+.footerBottomSpansContainer{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerBottomSpansContainer select{
+    background-color: black;
+    color: #A8A8A8;
+    border: none;
+    margin: 0 8px;
+    font-size: 12px;
+}
+.footerBottomSpansContainer p{
+    font-size: 12px;
+    color: #A8A8A8;
+}
