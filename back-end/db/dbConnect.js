@@ -3,7 +3,7 @@ require('dotenv').config();
 
 async function dbConnect() {
 
-    const connectionString = "mongodb+srv://devworkmail44:wXCSI3i3fN9qu921@cluster0.t1kwxcj.mongodb.net/";
+    const connectionString = "mongodb+srv://bworks454:i1AjClcbV6e5nQvS@instagram.focsdxw.mongodb.net/";
 
     try {
         await mongoose.connect(connectionString, {

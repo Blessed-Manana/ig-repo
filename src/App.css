@@ -33,6 +33,7 @@
   background-color: #000;
   display: flex;
   padding-top: 40px;
+
 }
 
 .mainSide{
@@ -77,4 +78,9 @@ body *::-webkit-scrollbar-thumb {
 .chatroom{
   width: 70%;
   height: 100%;
+}
+
+.MuiBox-root .css-8h4mkq{
+  background-color: transparent !important;
+  border: none !important;
 }

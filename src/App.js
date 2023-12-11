@@ -1,41 +1,56 @@
 import "./App.css";
-import "./index.css"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+import { BrowserRouter, Routes, Route, useHistory } from "react-router-dom";
 import SideNav from "./components/layout/sideNav/SideNav";
 import Explore from "./pages/Explore";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Messages from "./pages/Messages";
-import Requests from "./pages/Requests"
+import Requests from "./pages/Requests";
 import Profile from "./pages/Profile";
 import Reel from "./pages/Reel";
+import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [navSpaceWidth, setNavSpaceWidth] = useState('250px'); // Initial width, you can adjust as needed
+  const [isNavVisible, setNavVisible] = useState(true);
+  // const history = useHistory();
+
+  useEffect(() => {
+    // Check the current route and hide the nav for "/Login" and "/Signup"
+    const currentPath = window.location.pathname;
+    if (currentPath === "/Login" || currentPath === "/Signup") {
+      setNavVisible(false);
+    } else {
+      setNavVisible(true);
+    }
+  }, []);
 
   const shrinkNavSpace = () => {
-    setNavSpaceWidth('75px');
+    setNavVisible(true);
   };
 
-  return ( 
+  return (
     <BrowserRouter>
       <div className="App">
-        <div className="nav2">
-          <SideNav onMessageClick={shrinkNavSpace}/>
-        </div>
-        <div className="navSpace" style={{ width: navSpaceWidth }}></div>
+        {/* Conditional rendering of SideNav */}
+        {isNavVisible && (
+          <div className="nav2">
+            <SideNav onMessageClick={shrinkNavSpace} />
+          </div>
+        )}
+
+        <div className="navSpace" style={{ display: isNavVisible ? "block" : "none" }}></div>
         <div className="pages">
           <Routes>
-            <Route path="/" element={<Home/>}></Route>
-            <Route path="/Login" element={<Login/>}></Route>
-            <Route path="/Signup" element={<Signup/>}></Route>
-            <Route path="/Explore" element={<Explore/>}></Route>
-            <Route path="/Requests" element={<Requests/>}></Route>
-            <Route path="/Messages" element={<Messages/>}></Route>
-            <Route path="/Reel" element={<Reel/>}></Route>
-            <Route path="/Profile" element={<Profile/>}></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
+            <Route path="/Explore" element={<Explore />} />
+            <Route path="/Requests" element={<Requests />} />
+            <Route path="/Messages" element={<Messages />} />
+            <Route path="/Reel" element={<Reel />} />
+            <Route path="/Profile" element={<Profile />} />
           </Routes>
         </div>
       </div>
